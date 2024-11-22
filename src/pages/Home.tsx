@@ -6,86 +6,12 @@ import { FocusCards } from "../components/ui/focus-cards";
 import Help from "../components/ui/help";
 import Testimonials from "../components/ui/SideScroll";
 import FeaturesComponent from "../components/common/FeatureComponent";
+import { assistanceData, auProducts, cardDataDetails } from "../data/AllData";
 
 const Home = () => {
   const [currProduct, setCurrentProduct] = useState(0)
 
-  const cardData: any[] = [
-    {
-      id: 1,
-      name: "AU PAY",
-      tagline: "Exclusive Gold Savings Scheme Payment App",
-      description: "Simple, easy gold scheme payments for customers with AU Pay.",
-      buttonText: "Get Started",
-      imageSymbol: "no-symbol",
-      lineImage: "no-aupayline",
-      arrowImage: "icon",
-    },
-    {
-      id: 2,
-      name: "AU SALES",
-      tagline: "All-Round Inventory Management Assistant",
-      description: "The holistic store management solution you need.",
-      buttonText: "Get Started",
-      imageSymbol: "no-symbol",
-      lineImage: "no-ausalesline",
-      arrowImage: "icon",
-    },
-    {
-      id: 3,
-      name: "AU SHOP",
-      tagline: "Sleek Online Platform for Fine Jewellery",
-      description: "Give your customers the ultimate online jewellery shopping experience.",
-      buttonText: "Get Started",
-      imageSymbol: "no-symbol",
-      lineImage: "no-aupayline",
-      arrowImage: "icon",
-    },
-  ];
-
-  const assistanceData = [
-    {
-      title: 'All-Round Assistance',
-      description: 'Crafted for excellence, AURUMM is a premium end-to-end software suite that is designed for jewellery stores of all sizes.',
-      img: '/Auss/start.jpeg',
-    },
-    {
-      title: 'Relationship Management',
-      description: 'Stay tuned with your customers and vendors to keep their data safe and sound - with AURUMM, anything is possible!',
-      img: '/Auss/customer.jpeg',
-    },
-    {
-      title: 'Technical Support',
-      description: 'Our dedicated team of professionals are available anytime throughout the year to resolve all your queries!',
-      img: '/Auss/time.jpeg',
-    },
-    {
-      title: 'Stay Ahead',
-      description: 'We\'re always keeping up with the latest trends and updating our platforms - so you\'ll always have the edge over your competitors!',
-      img: '/Auss/puzle.jpeg',
-    },
-  ];
-
-  const products = [
-    {
-      name: "AU SHOP",
-      title: "Open Your Shop To World",
-      description: "A Smooth Jewellery Shopping Experience",
-      img: "/Auss/phone.png"
-    },
-    {
-      name: "AU SALES",
-      title: "The Hybrid ERP Magic",
-      description: "Inventory Management Excellence In Every Tap",
-      img: "/Auss/lap.png"
-    },
-    {
-      name: "AU PAY",
-      title: "The Golden Gold App",
-      description: "We're Making Jewellery Scheme Payments Easier",
-      img: "/Auss/phone2.png"
-    }
-  ]
+  
 
 
   return (
@@ -127,7 +53,7 @@ const Home = () => {
         <div>
           <h3 className="font-bold text-center pt-10">WHY AURUMM - AU PAY?</h3>
           <h1 className="text-center text-4xl py-4 font-bold">Euismod Scelerisque Pretiumdui</h1>
-          <FocusCards cards={cardData} />
+          <FocusCards cards={cardDataDetails} />
         </div>
 
         <div>
@@ -135,7 +61,7 @@ const Home = () => {
         </div>
 
         <div className="flex pt-10 justify-center space-x-4 mb-10">
-          {products.map((product, index) => (
+          {auProducts.map((product, index) => (
             <button
               key={index}
               onClick={() => setCurrentProduct(index)}
@@ -151,7 +77,7 @@ const Home = () => {
         </div>
 
 
-        <SingleProduct data={products[currProduct]} />
+        <SingleProduct data={auProducts[currProduct]} />
 
         <Help cardData={assistanceData} />
 

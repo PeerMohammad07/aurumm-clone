@@ -4,7 +4,7 @@ import { AlignRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export interface INav {
-  setDark?: (color: string) => void; // Explicitly define the function type
+  setDark?: (color: string) => void;
 }
 
 const Navbar: React.FC<INav> = ({ setDark }) => {
@@ -50,9 +50,13 @@ const Navbar: React.FC<INav> = ({ setDark }) => {
           className="h-10 w-auto"
         />
 
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-10">
           <ul className="flex items-center space-x-8 font-pt-serif text-gray-700 dark:text-white">
-            <Link to={'/'} className="hover:text-gray-900 dark:hover:text-gray-300 cursor-pointer transition duration-300">
+            <Link
+              to={"/"}
+              className="hover:text-gray-900 dark:hover:text-gray-300 cursor-pointer transition duration-300"
+            >
               Home
             </Link>
 
@@ -60,30 +64,11 @@ const Navbar: React.FC<INav> = ({ setDark }) => {
               <div className="hover:text-gray-900 dark:hover:text-gray-300 cursor-pointer transition duration-300">
                 Products & Features
               </div>
-
-              <div className="absolute w-48 left-0  hidden group-hover:block bg-white dark:bg-black shadow-lg rounded-lg overflow-hidden z-50">
-                <div className="flex items-center hover:bg-gray-100 dark:hover:bg-white dark:hover:text-black px-2">
+              <div className="absolute w-48 left-0 hidden group-hover:block bg-white dark:bg-black shadow-lg rounded-lg overflow-hidden z-50">
+                <div className="flex items-center hover:bg-gray-100 dark:hover:bg-gray-700 px-2 py-2">
                   <img src="/Auss/icon.png" alt="icon" className="h-4" />
                   <Link
-                    to={'/product'}
-                    className="px-2 py-2 cursor-pointer transition duration-300"
-                  >
-                    AuSales
-                  </Link>
-                </div>
-                <div className="flex items-center hover:bg-gray-100 dark:hover:bg-white dark:hover:text-black px-2">
-                  <img src="/Auss/icon.png" alt="icon" className="h-4" />
-                  <Link
-                    to={'/product'}
-                    className="px-2 py-2 cursor-pointer transition duration-300"
-                  >
-                    AuSales
-                  </Link>
-                </div>
-                <div className="flex items-center hover:bg-gray-100 dark:hover:bg-white dark:hover:text-black px-2">
-                  <img src="/Auss/icon.png" alt="icon" className="h-4" />
-                  <Link
-                    to={'/product'}
+                    to={"/product"}
                     className="px-2 py-2 cursor-pointer transition duration-300"
                   >
                     AuSales
@@ -92,7 +77,10 @@ const Navbar: React.FC<INav> = ({ setDark }) => {
               </div>
             </li>
 
-            <Link to={'/'} className="hover:text-gray-900 dark:hover:text-gray-300 cursor-pointer transition duration-300">
+            <Link
+              to={"/"}
+              className="hover:text-gray-900 dark:hover:text-gray-300 cursor-pointer transition duration-300"
+            >
               Contact
             </Link>
           </ul>
@@ -114,22 +102,6 @@ const Navbar: React.FC<INav> = ({ setDark }) => {
         </div>
 
         {/* Mobile Dropdown */}
-        {dropDown && (
-          <div className="absolute left-0 right-0 top-16 bg-white dark:bg-black text-gray-700 dark:text-white shadow-lg rounded-lg p-4 space-y-4 z-50 md:hidden">
-            <ul>
-              <li className="hover:text-gray-900 dark:hover:text-gray-300 cursor-pointer transition duration-300">
-                Home
-              </li>
-              <li className="hover:text-gray-900 dark:hover:text-gray-300 cursor-pointer transition duration-300">
-                Products & Features
-              </li>
-              <li className="hover:text-gray-900 dark:hover:text-gray-300 cursor-pointer transition duration-300">
-                Contact
-              </li>
-            </ul>
-          </div>
-        )}
-
         <div className="md:hidden">
           <button
             onClick={toggleDropdown}
@@ -137,6 +109,29 @@ const Navbar: React.FC<INav> = ({ setDark }) => {
           >
             <AlignRight className="w-6 h-6" />
           </button>
+
+          {dropDown && (
+            <div className="absolute left-0 right-0 top-16 bg-white dark:bg-black text-gray-700 dark:text-white shadow-lg rounded-lg p-4 space-y-4 z-50">
+              <ul>
+                <li className="hover:text-gray-900 dark:hover:text-gray-300 cursor-pointer transition duration-300">
+                  <Link to={"/"}>Home</Link>
+                </li>
+                <li className="hover:text-gray-900 dark:hover:text-gray-300 cursor-pointer transition duration-300">
+                  <Link to={"/product"}>Products & Features</Link>
+                </li>
+                <li className="hover:text-gray-900 dark:hover:text-gray-300 cursor-pointer transition duration-300">
+                  <Link to={"/"}>Contact</Link>
+                </li>
+              </ul>
+              <button
+                onClick={toggleTheme}
+                className="text-gray-700 dark:text-white hover:text-gray-900 dark:hover:text-gray-300 transition duration-300 w-full flex justify-center items-center"
+              >
+                {isDarkMode ? <Moon className="mr-2" /> : <Sun className="mr-2" />}
+                {isDarkMode ? "Dark Mode" : "Light Mode"}
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </nav>

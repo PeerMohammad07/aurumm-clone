@@ -1,39 +1,10 @@
 import Footer from "../components/layouts/Footer";
 import Layout from "../components/layouts/Layout";
 import Help from "../components/ui/help";
+import { cardData } from "../data/AllData";
 import Features from "./Features";
 
 const Product = () => {
-  const cardData = [
-    {
-      title: 'Comprehensive Inventory Management',
-      img : '/Auss/start.jpeg',
-      description:
-        'Efficiently track, manage, and optimize your jewellery inventory with advanced features tailored for the jewellery industry.',
-      link: '/',
-    },
-    {
-      title: 'Customer-Centric Approach',
-      img : '/Auss/customer.jpeg',
-      description:
-        'Efficiently track, manage, and optimize your jewellery inventory with advanced features tailored for the jewellery industry.',
-      link: '/',
-    },
-    {
-      title: 'Real-Time Analytics',
-      img : '/Auss/time.jpeg',
-      description:
-        'Efficiently track, manage, and optimize your jewellery inventory with advanced features tailored for the jewellery industry.',
-      link: '/',
-    },
-    {
-      title: 'Seamless Integration',
-      img : '/Auss/puzle.jpeg',
-      description:
-        'Efficiently track, manage, and optimize your jewellery inventory with advanced features tailored for the jewellery industry.',
-      link: '/',
-    },
-  ];
 
 
   return (
@@ -69,11 +40,11 @@ const Product = () => {
           </div>
         </div>
 
-        <Help cardData={cardData}/>
+        <Help cardData={cardData} />
         <div className="py-5">
-        <Features/>
+          <Features />
         </div>
-        <Footer/>
+        <Footer />
       </div>
     </>
   );

@@ -1,60 +1,7 @@
+import { features } from "../data/AllData";
+
 const Features = () => {
-  const features = [
-    {
-      title: "Stock & RFID Inventory Management",
-      description:
-        "Utilize RFID technology for precise inventory tracking and efficient stock management.",
-      items: [
-        { icon: "📦", title: "Precision Tracking" },
-        { icon: "📊", title: "Efficient Stock Control" },
-      ],
-    },
-    {
-      title: "Order Management",
-      description:
-        "Simplify order processing and tracking to enhance customer service and satisfaction.",
-      items: [
-        { icon: "📜", title: "Streamlined Processing" },
-        { icon: "📍", title: "Enhanced Tracking" },
-      ],
-    },
-    {
-      title: "Karighar Management",
-      description:
-        "Effectively manage artisans and workshops to ensure smooth production processes.",
-      items: [
-        { icon: "🛠️", title: "Artisan Coordination" },
-        { icon: "🏭", title: "Workshop Oversight" },
-      ],
-    },
-    {
-      title: "Staff Management",
-      description:
-        "Efficiently handle employee scheduling, performance tracking, and payroll management.",
-      items: [
-        { icon: "📅", title: "Schedule Optimization" },
-        { icon: "📈", title: "Performance Tracking" },
-      ],
-    },
-    {
-      title: "HUID",
-      description:
-        "Implement unique identifiers for products to enhance security and streamline inventory management.",
-      items: [
-        { icon: "🔒", title: "Unique Product Identification" },
-        { icon: "🛡️", title: "Enhanced Security Measures" },
-      ],
-    },
-    {
-      title: "Scheduled Report & Notification",
-      description:
-        "Stay informed with scheduled reports and timely notifications for better decision-making and operational efficiency.",
-      items: [
-        { icon: "⏰", title: "Timely Insights" },
-        { icon: "🔔", title: "Proactive Alerts" },
-      ],
-    },
-  ];
+
 
   return (
     <section className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-black dark:to-gray-900 py-16">
