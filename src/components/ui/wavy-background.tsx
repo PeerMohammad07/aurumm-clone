@@ -114,12 +114,12 @@ export const WavyBackground = ({
   return (
     <div
       className={cn(
-        "h-96 flex flex-col items-center justify-center",
+        "h-96 flex flex-col items-center justify-center overflow-hidden", // Prevent scrolling
         containerClassName
       )}
     >
       <canvas
-        className="absolute inset-0 z-[-1]" 
+        className="absolute inset-0 w-full z-[-1]" // Restrict canvas width to 100% of the viewport
         ref={canvasRef}
         id="canvas"
         style={{
@@ -131,4 +131,5 @@ export const WavyBackground = ({
       </div>
     </div>
   );
+  
 };
